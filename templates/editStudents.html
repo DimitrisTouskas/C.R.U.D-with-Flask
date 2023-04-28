@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+</style>
+<title>Editing Student</title>
+<hr>
+    <h2>Edit:</h2>
+    <form action='/foitites/editStudents/{{student.id}}' methods="POST">
+    Ονομα: <input type ='text' name='name' id='name' value="{{student.Onoma}}">
+    <br>
+    Επιθετο: <input type ='text' name='lastname' id='lastname' value="{{student.Epitheto}}">
+    <br>
+    Email: <input type ='text' name='email' id='email' value="{{student.Email}}">
+    <br>
+    Διευθυνση: <input type ='text' name='dieuthinsi' id='dieuthinsi' value="{{student.dieuthinsi}}">
+    <br>
+    Τηλεφωνο: <input type ='text' name='Phone' id='Phone' value="{{student.Phone}}">
+    <br>
+    Εξαμηνο: <input type ='text' name='eksamino' id='eksamino' value="{{student.eksamino}}">
+    <br>
+    ΑΜ: <input type ='text' name='A_M' id='A_M' value="{{student.A_M}}">
+    <br>
+        <input type='submit' value='Save' formmethod="post">
+    </form>
+    <hr>
+{%endblock%}

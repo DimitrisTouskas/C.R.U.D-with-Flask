@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+<title>Αποτελεσματα Αναζητησης</title>
+
+
+{%block content%}
+
+<br>
+<br>
+<table>
+<tr>
+  <th>Ονομα</th>
+  <td>Επιθετο</th>
+  <th>Email</th>
+  <th>Διευθυνση</th>
+  <th>Τηλεφωνο</th>
+  <th>Εξαμηνο</th>
+  <th>ΑΜ</th>
+</tr>
+<tr>
+{%for row in rows%}
+  <td>{{row.Onoma}}<td>
+  <td>{{row.Epitheto}}</td>
+  <td>{{row.Email}}</td>
+  <td>{{row.dieuthinsi}}</td>
+  <td>{{row.Phone}}</td>
+  <td>{{row.eksamino}}</td>
+  <td>{{row.A_M}}</td>
+{%endfor%}
+  </tr>
+</table>
+
+<table>
+<tr>
+  <th>Τιτλος</th>
+  <td>Σημειωση</th>
+  <th>Tag</th>
+</tr>
+<tr>
+{%for row1 in rows1%}
+  <td>{{row1.title}}<td>
+  <td>{{row1.content}}</td>
+  <td>{{row1.tag}}</td>
+{%endfor%}
+  </tr>
+</table>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+{%endblock%}
+
+

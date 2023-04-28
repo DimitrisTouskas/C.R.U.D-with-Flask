@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{%block content%}
+{%block body%}
+<style>
+  form { 
+      margin: 0 auto; 
+      width:250px;
+      width:100%;
+      text-align: center;
+  }
+  
+  button{
+      text-align: center;
+  }
+  h2{
+      text-align: center;
+  }
+</style>
+<h2>Login</h2>
+<form action={{url_for('login')}} method="POST" >
+  {{login.csrf_token}}
+  {{login.email.label}}
+  {{login.email}}
+  <ul>
+  {% for error in login.email.errors%}
+    <li style='color:red;'>{{error}}</li>
+  {% endfor %}
+  </ul>
+  {{login.password.label}}
+  {{login.password}}
+  <input type = "submit" value= "login">
+</form>
+{%endblock%}
+{%endblock%}

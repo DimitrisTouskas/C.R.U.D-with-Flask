@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+<title>Εγγραφη φοιτητη</title>
+
+
+{%block content%}
+<style> 
+  input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+  h2{
+      text-align: center;
+  }
+  </style>
+<hr>
+<h2>Παρακαλω εισαγετε στοιχεια νεου φοιτητη:</h2>
+<form action='/addStudents' method="POST">
+Ονομα: <input type = 'text' name= 'name' id= 'name'>
+<br>
+Επιθετο: <input type = 'text' name= 'lastname' id= 'lastname'>
+<br>
+Email: <input type='text' name= 'email' id= 'email'>
+<br>
+Διευθυνση: <input type='text' name= 'dieuthinsi' id= 'dieuthinsi'>
+<br>
+Τηλεφωνο: <input type='text' name= 'Phone' id= 'Phone'>
+<br>
+Εξαμηνο: <input type='text' name= 'eksamino' id= 'eksamino'>
+<br>
+Α_Μ: <input type='text' name= 'A_M' id= 'A_M'>
+<br>
+<input type='submit' value='Εγγραφη' formmethod= "POST">
+</form>
+{%endblock%}

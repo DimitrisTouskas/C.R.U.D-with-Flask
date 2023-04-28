@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+<title>Εγγραφη</title>
+
+
+  
+
+{%block content%}
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+    </style>
+{% if error %}  
+        <p><strong>Error</strong>: {{error}}</p>  
+    {% endif %} 
+<hr>
+<h2>Παρακαλω εισαγετε στοιχεια νεου χρηστη:</h2>
+<form action='/signup' method='POST'>
+    <label for="fname">First Name</label>
+    <input type = 'text' name= 'name' id= 'name'>
+    <label for="fname">Lastname</label>
+    <input type = 'text' name= 'lastname' id= 'lastname'>
+<br>
+Email: <input type='text' name= 'email' id= 'email'>
+<br>
+Password <input type='text' name= 'password' id= 'password'>
+<br>
+Confirm Password: <input type='text' name= 'password_conf' id= 'password_conf'>
+<br>
+<input type='submit' value='Εγγραφη'>
+</form>
+{%endblock%}
